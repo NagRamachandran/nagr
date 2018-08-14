@@ -1,0 +1,37 @@
+
+
+curl --header "Content-Type: application/json" \
+  --request POST \
+  --data '{"parameters":{"method":"TduCompaniesByZip","zip_code":"77007","include_details":false,"language":0}}' \
+  http://www.powertochoose.org/en-us/service/v1/
+
+
+curl --header "Content-Type: application/json" \
+  --request POST \
+  --data '{"parameters":{"method":"RepCompaniesByZip","zip_code":"77007","include_details":false,"language":0}}' \
+  http://www.powertochoose.org/en-us/service/v1/
+
+
+curl --header "Content-Type: application/json" \
+  --request POST \
+  --data '{"parameters":{"method":"plans","zip_code":"77007","include_details":false,"language":0}}' \
+  http://www.powertochoose.org/en-us/service/v1/
+
+curl --header "Content-Type: application/json" \
+  --request POST \
+  --data '{"parameters":{"method":"plans/count","zip_code":"77007","include_details":false,"language":0}}' \
+  http://www.powertochoose.org/en-us/service/v1/
+
+   var dataObject = {
+        parameters: {
+            method: 'plans',
+            zip_code: zipcode,
+            company_tdu_id: company_tdu_id,
+            plan_mo_from: (plan_mo_from) ? plan_mo_from : '',
+            plan_mo_to: (plan_mo_to) ? plan_mo_to : '',
+            //contract_length: (contract_length.length) ? contract_length : '',
+            estimated_use: (estimated_use) ? parseInt(estimated_use) : '',
+            plan_type: (plan_type.length) ? plan_type : '',
+            language: parseInt(ResourcesGridLabel_Language)
+        }
+    };
